@@ -1,0 +1,5 @@
+-- Multiplexeur 2 vers 1 permettant le choix entre unités et dizaines
+--     Entrées: 
+--         2 bus de 4 bits
+--         Sélection (1 bit())
+--     Sortie: 4 bits

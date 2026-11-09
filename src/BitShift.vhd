@@ -1,0 +1,1 @@
+-- Module qui applique un décalage logique vers la gauche

@@ -1,0 +1,1 @@
+-- Module qui applique l'opération de complément à 2 sur l'entrée A

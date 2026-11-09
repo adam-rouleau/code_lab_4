@@ -1,0 +1,1 @@
+-- Module convertissant un nombre binaire en un signal d'affichage 7 segments

@@ -1,0 +1,3 @@
+-- Module qui applique une conversion décimale sur l'entrée
+--     Ressort les unités et dizaines codées en binaires 
+--     Sur les sorties S0 et S1
