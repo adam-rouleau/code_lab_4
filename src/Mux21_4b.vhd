@@ -3,13 +3,13 @@
 -- Engineer: Adam Rouleau
 -- 
 -- Create Date: 11/09/2026 09:37:26 AM
--- Design Name: Multiplexeur 2 à 1 4 bits
+-- Design Name: Multiplexeur 2 vers 1 4 bits
 -- Module Name: Mux21_4B - Behavioral
 -- Project Name: INF1500 - Laboratoire 4
 -- Target Devices: xc7a100tcsg324-1
 -- Tool Versions: 
 -- Description: Multiplexeur 2 vers 1
---              Permet le choix entre uniutés et dizaines
+--              Permet le choix entre unités et dizaines
 -- 
 -- Dependencies: 
 -- 
