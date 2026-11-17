@@ -1,56 +1,24 @@
-----------------------------------------------------------------------------------
--- Company: Polytechnique Montréal
--- Engineer: Adam Rouleau
--- 
--- Create Date: 11/09/2026 09:35:56 AM
--- Design Name: Multiplexeur 3 vers 1 5 bits
--- Module Name: Mux31_5B - Behavioral
--- Project Name: INF1500 - Laboratoire 4
--- Target Devices: xc7a100tcsg324-1
--- Tool Versions: 
--- Description: Multiplexeur 2 vers 1
---              Permet le choix entre 
---                  Les deux modules 
---                  L'entrée du circuit
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 1.00 - Ajout du comportement principal
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
+-- INF1500 Labo 4 - Mux31_5b
+-- Rouleau Adouani
+-- Mux 3 vers 1 sur 5 bits
+-- SEL 00 = E0  01 = E1  10 = E2  11 = 0
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
-use IEEE.NUMERIC_STD.ALL;
+entity Mux31_5b is
+    Port ( E0  : in  STD_LOGIC_VECTOR (4 downto 0);
+           E1  : in  STD_LOGIC_VECTOR (4 downto 0);
+           E2  : in  STD_LOGIC_VECTOR (4 downto 0);
+           SEL : in  STD_LOGIC_VECTOR (1 downto 0);
+           S   : out STD_LOGIC_VECTOR (4 downto 0));
+end Mux31_5b;
 
--- Uncomment the following library declaration if instantiating
--- any Xilinx leaf cells in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
-
-entity Mux31_5B is
-    Port ( E0 : in STD_LOGIC_VECTOR (4 downto 0);
-           E1 : in STD_LOGIC_VECTOR (4 downto 0);
-           E2 : in STD_LOGIC_VECTOR (4 downto 0);
-           SEL : in STD_LOGIC_VECTOR (1 downto 0);
-           S : out STD_LOGIC_VECTOR (4 downto 0));
-end Mux31_5B;
-
-architecture Behavioral of Mux31_5B is
-
+architecture flot_donnees of Mux31_5b is
 begin
-
-with SEL select
-    S <= E0 when "00",
-         E1 when "01",
-         E2 when "10",
-         "00000000" when "01",
-         "00000000" when others;
-
-end Behavioral;
+    with SEL select
+        S <= E0              when "00",
+             E1              when "01",
+             E2              when "10",
+             (others => '0') when others;  -- 11 donne 00000
+end flot_donnees;
